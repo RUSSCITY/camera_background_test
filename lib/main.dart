@@ -185,6 +185,8 @@ class MyTaskHandler extends TaskHandler {
       // final decodedJson = json.decode(utf8.decode(message));
       // conlog("GOT MESSAGE ON ISOLATE THREAD2:" + decodedJson.toString());
       if (message == "getCameraConfig") {
+        WidgetsFlutterBinding.ensureInitialized();
+        DartPluginRegistrant.ensureInitialized();
         var response = "nothing";
         try {
           response =
